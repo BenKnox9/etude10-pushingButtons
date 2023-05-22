@@ -1,7 +1,5 @@
 # etude10-pushingButtons
 
-
-
 ## Authors
 Ben Knox, Daniel Bohinc
 
