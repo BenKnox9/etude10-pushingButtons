@@ -2,15 +2,16 @@ from collections import deque
 
 
 class State:
+    """ 
+    Constructor method
+    Method creates a state object
+    """
+
     def __init__(self, grid, shapes, colours, unpressable):
         self.grid = grid
         self.shapes = shapes
         self.colours = colours
         self.unpressable = unpressable
-
-    def __hash__(self):
-        return hash((tuple(map(tuple, self.grid)), tuple(map(tuple, self.shapes)),
-                     tuple(map(tuple, self.colours)), tuple(map(tuple, self.unpressable))))
 
 
 class Move:
@@ -21,40 +22,37 @@ class Move:
 
 class ButtonsSolver:
     def __init__(self):
-        self.visited_states = set()
-        self.pressed_buttons = set()
+        self.visitedStates = set()
 
     def solve(self, startingState):
         # Create a queue filled with 3 value tuples.
         queue = deque([(startingState, 0, [])])
 
-        while queue:
+        while len(queue) > 0:
             # The three values in the queue are state, depth, and moves
             # state being the current state of the puzzle game, depth being the number of moves made so far,
             # and moves being the list of col and row values of the buttons which have been pressed so far, stored as a Move object.
             state, depth, moves = queue.popleft()
-            print(moves)
 
             # If every button in the puzzle is pushed down, return the number of moves and the list of moves taken.
-            print("depth: ", depth)
             if self.isPuzzleComplete(state):
-                button_count = len(moves)
-                button_presses = []
+                buttonCount = len(moves)
+                buttonPressesList = []
                 for move in moves:
-                    button_presses.append((move.col, move.row))
+                    buttonPressesList.append((move.col, move.row))
 
                 arrayDescription = "\nButtons pressed will be presented as (column, row) with index's starting at zero.\nzero, zero being the top left tile of the game."
-                return arrayDescription + "\nSolution:\n" + "Buttons Pressed: " + str(button_presses) + "\nNumber of moves: " + str(button_count)
+                return arrayDescription + "\nSolution:\n" + "Buttons Pressed: " + str(buttonPressesList) + "\nNumber of moves: " + str(buttonCount)
 
-            # Add current move to visited states
-            self.visited_states.add(hash(state))
+            # Add current state to visited states
+            self.visitedStates.add(state)
 
-            # Make another move
+            # Press another button
             for move in self.findNewMoves(state):
-                resulting_state = self.makeMove(state, move)
+                stateAfterMove = self.makeMove(state, move)
 
-                if hash(resulting_state) not in self.visited_states:
-                    queue.append((resulting_state, depth + 1, moves + [move]))
+                if stateAfterMove not in self.visitedStates:
+                    queue.append((stateAfterMove, depth + 1, moves + [move]))
 
         return None
 
@@ -83,14 +81,15 @@ class ButtonsSolver:
     """
 
     def findNewMoves(self, state):
-        possible_moves = set()
+        possibleMoves = set()
 
         for row in range(len(state.grid)):
             for col in range(len(state.grid[row])):
+                # If button unpressed and if it is a tile that is part of the game
                 if state.grid[row][col] and not state.unpressable[row][col]:
-                    possible_moves.add(Move(row, col))
+                    possibleMoves.add(Move(row, col))
 
-        return possible_moves
+        return possibleMoves
 
     def makeMove(self, state, move):
         row = move.row
@@ -102,13 +101,15 @@ class ButtonsSolver:
         shape = state.shapes[row][col]
         color = state.colours[row][col]
 
-        # checks buttons which are the same shape or colour in the same column. If there is any, will reverse the state of that button.
+        # checks buttons which are the same shape or colour in the same column.
+        # If there is any, will reverse the state of that button.
         for i in range(len(state.grid)):
             if not state.unpressable[i][col]:
                 if state.shapes[i][col] == shape or state.colours[i][col] == color:
                     new_grid[i][col] = not new_grid[i][col]
 
-        # checks buttons which are the same shape or colour in the same row. If there is any, will reverse the state of that button.
+        # checks buttons which are the same shape or colour in the same row.
+        # If there is any, will reverse the state of that button.
         for j in range(len(state.grid[row])):
             if not state.unpressable[row][j]:
                 if state.shapes[row][j] == shape or state.colours[row][j] == color:
@@ -264,4 +265,4 @@ def printSolution(level):
 
 
 # Enter level number in printSol(). Currently the levels initialised are 8, 17, 19, 24
-printSolution(17)
+printSolution(8)
