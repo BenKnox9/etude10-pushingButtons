@@ -4,6 +4,7 @@ from collections import deque
 This script calculates the minimum number of moves that a game in pushingButtons.jar will take to complete using breadth first search. 
 The script will also print the moves that you can follow to validate this result. Currently the code is only set up for 
 levels 8, 17, 19 and 24, however if you want to check another level this can be done by adding to the startingState method. 
+To run the code at a specific level, change line 323 and enter the level as the parameter of the print solution method.
 """
 
 
