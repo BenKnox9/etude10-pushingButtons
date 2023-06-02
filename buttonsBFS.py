@@ -41,7 +41,7 @@ class ButtonsSolver:
     Method which will use breadth first search to explore different combinations of button presses. Once a combination of button presses
     is found which ends with a grid state of all false, output is returned.
 
-    @params: self, startingState
+    @Args: self, startingState
     @return: result, the number of moves made, and the position of each button pressed
     """
 
@@ -84,7 +84,7 @@ class ButtonsSolver:
     isGameComplete
     Method which checks if the game is finished. Checks if every tile is set to false. 
 
-    @params: self, state
+    @Args: self, state
     @return: True if game is complete, false if not
     """
 
@@ -100,7 +100,7 @@ class ButtonsSolver:
     Method which finds potential next moves. Checks the grid for any tiles which are currently set to True
     as these represent unpressed buttons.
 
-    @params: self, state
+    @Args: self, state
     @return: a set of possible moves as (row, column)
     """
 
@@ -120,7 +120,7 @@ class ButtonsSolver:
     Method which will set the current button to its opposite state, will then check buttons in the same row and column.
     If there is any buttons in the same row or column with the same colour or shape, it will reverse the state of these buttons as well.
 
-    @params: self, state, move
+    @Args: self, state, move
     @return: newState, the buttons grid once the move has been made.
 
     """
@@ -156,11 +156,11 @@ class ButtonsSolver:
 
 """
 startingState
-Method used to set up each level of the pushing buttons game. This method will set four things, grid is will have true wherever
+Method used to set up each level of the pushing buttons game. This method will set four nested lists, grid will have true wherever
 there is a button which is unpressed. For colours, every matching letter will have the same colour, and same with shape. For 
 unpressable, anything that is set to true will be a tile which is not included in the game.
 
-@params: levelNo, the level number to be selected
+@Args: levelNo, the level number to be selected
 @return: a starting state
 """
 
