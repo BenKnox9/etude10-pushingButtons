@@ -40,7 +40,7 @@ python3 buttonsBFS.py
 ```
 
 ## Testing
-Firstly prior to this submission we had submitted a manual approach to solving these levels, so were already aware of the optimum solutions. 
+Firstly, prior to this submission we had submitted a manual approach to solving these levels, so were already aware of the optimum solutions. 
 
 Given buttonsBFS.py prints out the buttons pressed in order, we could use these buttons in the game and verify that the buttons pressed would in fact complete the game. As well as this, the optimum number of buttons pressed for each level matched the result we found when using a manual approach to this task. 
 
