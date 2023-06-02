@@ -44,6 +44,9 @@ Firstly prior to this submission we had submitted a manual approach to solving t
 
 Given buttonsBFS.py prints out the buttons pressed in order, we could use these buttons in the game and verify that the buttons pressed would in fact complete the game. As well as this, the optimum number of buttons pressed for each level matched the result we found when using a manual approach to this task. 
 
+The example solutions below are expressed in the form (column, row). 
+We are assuming that the game is made up of 5 tiles by 5 tiles, with the top left tile of the game being at column 0 and row 0. 
+
 The final number of buttons pressed for each level was as follows: 
 - Level 8:  3 
     - Example solution: [(1, 3), (1, 1), (2, 3)]
