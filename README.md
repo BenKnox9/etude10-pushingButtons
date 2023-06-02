@@ -11,7 +11,7 @@ To initialise the game state, we have used 4 nested lists, grid, colours, shapes
 
 These 4 nested lists assumed that the game as a whole was made up of 5 tiles by 5 tiles, however we could ignore tiles which weren't being used for buttons with the unpressable grid.
 
-To set up the initial game state this is what we did:
+To set up the initial game state this is what we did: <br>
 grid will have true wherever there is a button which is unpressed. For colours, every matching character will have the same colour, and same with shape. For unpressable, anything that is set to true will be a tile which is not included in the game. 
 
 From here we pass the starting state of the game into the solve method. The solve method is where the BFS will take place. The solve method will check if the game is complete (all buttons are pressed down) and if so return the solution. If not it will add itself to visitedStates and then press another button. This process will repeat until a solution is found.
@@ -21,7 +21,7 @@ The reason that BFS is used in this solution is that it loops through all possib
 More in depth descriptions on methods is included as comments in buttonsBFS.py
 
 ## Running the code
-Before you run the code you need to specify the level you want to find the solution for. This is done in line 323 of the script, enter the level as the paramter for the call to printSolution(). 
+Before you run the code you need to specify the level you want to find the solution for. This is done in line 323 of the script, enter the level as the paramter for the call to printSolution(). <br>
 e.g. for level 8:
 ```python
 printSolution(8)
@@ -44,7 +44,7 @@ Firstly prior to this submission we had submitted a manual approach to solving t
 
 Given buttonsBFS.py prints out the buttons pressed in order, we could use these buttons in the game and verify that the buttons pressed would in fact complete the game. As well as this, the optimum number of buttons pressed for each level matched the result we found when using a manual approach to this task. 
 
-The example solutions below are expressed in the form (column, row). 
+The example solutions below are expressed in the form (column, row). <br>
 We are assuming that the game is made up of 5 tiles by 5 tiles, with the top left tile of the game being at column 0 and row 0. 
 
 The final number of buttons pressed for each level was as follows: 
