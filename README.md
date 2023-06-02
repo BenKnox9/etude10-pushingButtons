@@ -40,7 +40,9 @@ python3 buttonsBFS.py
 ```
 
 ## Testing
-Firstly prior to this submission we had submitted a manual approach to solving these levels, so were already aware of the optimum solutions. 
+buttonsBFS.py works efficiently on smaller levels, however some time is taken when the complexity of the game (number of buttons and length of solution) increases. This is evident in calculating the solution to level 17, where calculation time is around 30 seconds. Despite this the code works well and can calculate solutions for most levels in a reasonable time.
+
+Prior to this submission we had submitted a manual approach to solving these levels, so were already aware of the optimum solutions. 
 
 Given buttonsBFS.py prints out the buttons pressed in order, we could use these buttons in the game and verify that the buttons pressed would in fact complete the game. As well as this, the optimum number of buttons pressed for each level matched the result we found when using a manual approach to this task. 
 

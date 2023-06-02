@@ -321,4 +321,4 @@ def printSolution(level):
 """ 
 Enter level number in printSolution(). Currently the levels initialised are 8, 17, 19, 24
 """
-printSolution(17)
+printSolution(8)
