@@ -201,6 +201,7 @@ def startingState(levelNo):
         ]
 
     elif levelNo == 17:
+        # False if the button is pressed down, True if not
         grid = [
             [False, False, False, False, False],
             [True, False, False, False, True],
@@ -208,7 +209,7 @@ def startingState(levelNo):
             [False, False, False, False, False],
             [False, False, True, False, False]
         ]
-
+        # each letter that matches is the same colour
         colours = [
             ['Z', 'Z', 'Z', 'Z', 'Z'],
             ['A', 'Z', 'Z', 'Z', 'F'],
@@ -216,7 +217,7 @@ def startingState(levelNo):
             ['Z', 'C', 'C', 'C', 'Z'],
             ['Z', 'Z', 'D', 'Z', 'Z']
         ]
-
+        # each letter that matches is the same shape
         shapes = [
             ['X', 'Y', 'Z', 'W', 'P'],
             ['X', 'Y', 'Z', 'W', 'P'],
@@ -224,7 +225,7 @@ def startingState(levelNo):
             ['X', 'Y', 'Z', 'W', 'P'],
             ['X', 'Y', 'Z', 'W', 'P']
         ]
-
+        # Gets rid of unwanted tiles in the grid, True if the button is unpressable, or is a tile that is not in use in this game
         unpressable = [
             [True, True, True, True, True],
             [False, True, True, True, False],
@@ -320,4 +321,4 @@ def printSolution(level):
 """ 
 Enter level number in printSolution(). Currently the levels initialised are 8, 17, 19, 24
 """
-printSolution(8)
+printSolution(19)
