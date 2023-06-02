@@ -27,7 +27,7 @@ e.g. for level 8:
 printSolution(8)
 ```
 
-If you want to test a level that is not initialised yet you will need to add the relevant nested lists in the starting state method. the elements of each list are as follows:
+If you want to test a level that is not initialised yet you will need to add the relevant nested lists in the startingState method. the elements of each list are as follows:
 - grid will have true wherever there is a button which is unpressed.
 - For colours, every matching character will have the same colour. 
 - For shapes, every matching character will have the same shape. 
