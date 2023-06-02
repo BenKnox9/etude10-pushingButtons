@@ -51,7 +51,6 @@ The final number of buttons pressed for each level was as follows:
 - Level 8:  3 
     - Example solution: [(1, 3), (1, 1), (2, 3)]
 
-
 - Level 17:  10 
     - Example solution: [(2, 4), (0, 1), (0, 2), (4, 1), (2, 3), (3, 3), (0, 1), (3, 2), (2, 3), (1, 2)]
 
